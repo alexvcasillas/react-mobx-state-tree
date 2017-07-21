@@ -1,8 +1,26 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
-import './stylesheets/common.css';
-import App from './containers/app/app';
+import { render } from 'react-dom';
+import { Provider } from 'mobx-react';
+import GithubStore from './stores/github';
 import registerServiceWorker from './registerServiceWorker';
+import App from './containers/app/app';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+import './stylesheets/common.css';
+
+const githubStore = GithubStore.create();
+githubStore.fetchFromGithub();
+
+const store = {
+  github: githubStore
+};
+
+const router = (
+  <Provider {...store}>
+    <div>
+      <App />
+    </div>
+  </Provider>
+);
+
+render(router, document.getElementById('root'));
 registerServiceWorker();

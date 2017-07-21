@@ -146,11 +146,15 @@ table {
 body {
   min-height: 100vh;
   font-family: "Open Sans", sans-serif;
+  font-weight: 400;
   background: #ffc600;
-  text-transform: uppercase;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
   color: white;
+}
+
+strong {
+  font-weight: 600;
 }
