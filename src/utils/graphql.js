@@ -7,7 +7,7 @@ const client = new ApolloClient({
   })
 });
 
-const githubToken = 'a60dfad1937145aa185cffcee66e47537639649e';
+const githubToken = 'your_token_here';
 
 client.networkInterface.use([
   {
