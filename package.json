@@ -5,7 +5,6 @@
   "dependencies": {
     "apollo-client": "^1.9.0-1",
     "graphql-tag": "^2.4.2",
-    "grid-styled": "^2.0.0-9",
     "mobx": "^3.2.1",
     "mobx-react": "^4.2.2",
     "mobx-state-tree": "^0.9.2",
