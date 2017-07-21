@@ -89,8 +89,7 @@ const GithubStore = types.model(
         }
       `;
       const { data: { viewer } } = yield client.query({
-        query: query,
-        fetchPolicy: 'network-only'
+        query: query
       });
       this.user = UserModel.create({
         name: viewer.name,
