@@ -27,6 +27,10 @@ const Jump = styled.span`
   text-transform: uppercase;
   font-weight: 600;
 
+  @media (max-width: 768px) {
+    font-size: 20px;
+  }
+
   &:hover {
     transform: translateY(-20px) rotate(10deg) scale(2);
   }
