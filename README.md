@@ -15,6 +15,10 @@ The purpose of this project is only intended for learning. It's not intented to 
 If you want to try this project the first thing you have to do is to **clone** this repository. How? Just go to your favourite terminal and execute the following command (assuming that you previously have **git** installed): `git clone https://github.com/alexvcasillas/react-mobx-state-tree.git`. By doing so, you'll have the repository cloned in your computer. The next step is to move inside by typing `cd react-mobx-state-tree`. Alright, we're in now! You can't run it at this point because you have no dependencies installed so, we need to start with that, run the following command: `npm install` or if you're a yarn user just `yarn`.
 This might take a while because it's downloading all the minimum requirements as local dependencies so you can run this project (they're just a few). When it's done, you're good to go, simply run the following command `npm start` or if you're a yarn user `yarn start` and you will see the development build process and when everything is done, your browser will open a new window/tab with this project up and running.
 
+If you want your Github profile to fill this project, you need to generate a Github's Personal Access Token (PAT) and go to `src/utils/graphql.js - line 10` and replace `const githubToken = 'your_token_here';` the content within single qoutes with your Personal Access Token (PAT). Then just make the build and deploy it somewhere or just run it as development.
+
+You can customize everything with Styled Components!
+
 ### TLDR: How To
 
 1. `git clone https://github.com/alexvcasillas/react-mobx-state-tree.git`
@@ -43,6 +47,8 @@ I want to thank the following people and organizations for creating all that thi
 [Michel Weststrate](https://github.com/mweststrate) for the incredible job creating MobX and MobX State Tree.
 
 [Mattia Manzati](https://github.com/mattiamanzati) for it's support with everything related to MobX State Tree.
+
+[Max Stoiber](https://github.com/mxstbr) for it's awesome Styled Components :nail_care:
 
 [Dan Abramov](https://github.com/gaearon) for creating Create React App (also all of the contributors to it!)
 
