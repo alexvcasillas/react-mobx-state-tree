@@ -144,7 +144,6 @@ table {
 }
 
 body {
-  min-height: 100vh;
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   background-image: linear-gradient(to bottom left, #48c6ef 0%, #6f86d6 100%);

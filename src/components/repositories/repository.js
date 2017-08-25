@@ -4,6 +4,10 @@ import styled from 'styled-components';
 const Wrapper = styled.div`
   width: 50%;
   padding: 20px;
+
+  @media (max-width: 768px) {
+    width: 100%;
+  }
 `;
 
 const Card = styled.div`
