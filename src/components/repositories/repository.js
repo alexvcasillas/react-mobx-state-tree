@@ -35,13 +35,13 @@ const Link = styled.a`
   display: inline-block;
   text-decoration: none;
   outline: none;
-  color: #ffc600;
+  color: #6f86d6;
   transition: color 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
     outline: none;
-    color: #1e1e1e;
+    color: #48c6ef;
   }
 `;
 
@@ -49,13 +49,13 @@ const Homepage = styled.a`
   display: inline-block;
   text-decoration: none;
   outline: none;
-  color: #ffc600;
+  color: #6f86d6;
   transition: color 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
     outline: none;
-    color: #1e1e1e;
+    color: #48c6ef;
   }
 `;
 
@@ -87,7 +87,7 @@ const Repository = ({ repository }) =>
       </Description>
       <Block>
         <strong>Homepage: </strong>
-        <Homepage target={repository.homepageUrl}>
+        <Homepage href={repository.homepageUrl}>
           {repository.homepageUrl}
         </Homepage>
       </Block>
