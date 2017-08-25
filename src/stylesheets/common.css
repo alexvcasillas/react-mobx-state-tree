@@ -147,10 +147,7 @@ body {
   font-family: "Open Sans", sans-serif;
   font-weight: 400;
   background-image: linear-gradient(to bottom left, #48c6ef 0%, #6f86d6 100%);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+
   color: white;
 }
 
