@@ -56,9 +56,12 @@ const Homepage = styled.a`
   text-decoration: none;
   outline: none;
   color: #6f86d6;
+<<<<<<< HEAD
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+=======
+>>>>>>> ec35248fd85042ccb7ab37295bb64137fb3bebcb
   transition: color 0.3s ease-in-out;
 
   &:hover {
@@ -99,7 +102,7 @@ const Repository = ({ repository }) => (
       <Description>{repository.description}</Description>
       <Block>
         <strong>Homepage: </strong>
-        <Homepage target={repository.homepageUrl}>
+        <Homepage href={repository.homepageUrl}>
           {repository.homepageUrl}
         </Homepage>
       </Block>

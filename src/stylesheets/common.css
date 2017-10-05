@@ -146,7 +146,12 @@ table {
 body {
   font-family: 'Open Sans', sans-serif;
   font-weight: 400;
+<<<<<<< HEAD
   background-image: linear-gradient(to bottom left, #48c6ef 0, #6f86d6);
+=======
+  background-image: linear-gradient(to bottom left, #48c6ef 0%, #6f86d6 100%);
+
+>>>>>>> ec35248fd85042ccb7ab37295bb64137fb3bebcb
   color: white;
 }
 
