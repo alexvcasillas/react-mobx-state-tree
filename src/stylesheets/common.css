@@ -144,9 +144,9 @@ table {
 }
 
 body {
-  font-family: "Open Sans", sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-weight: 400;
-  background: #ffc600;
+  background-image: linear-gradient(to bottom left, #48c6ef 0, #6f86d6);
   color: white;
 }
 

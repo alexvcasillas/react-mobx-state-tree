@@ -1,6 +1,5 @@
-import { types } from 'mobx-state-tree';
+import { types, process } from 'mobx-state-tree';
 import client, { gql } from '../utils/graphql';
-import { async } from '../utils/mobx-state-tree';
 
 function compareRepo(a, b) {
   const aUpdated = new Date(a.updatedAt);
@@ -14,21 +13,19 @@ function compareRepo(a, b) {
   return 0;
 }
 
-const UserModel = types.model(
-  'UserModel',
-  {
+const UserModel = types
+  .model('UserModel', {
     name: types.maybe(types.string),
     bio: types.maybe(types.string),
     avatar: types.maybe(types.string),
     followers: types.maybe(types.number),
     following: types.maybe(types.number)
-  },
-  {}
-);
+  })
+  .views(self => ({}))
+  .actions(self => ({}));
 
-const RepositoryModel = types.model(
-  'RepoModel',
-  {
+const RepositoryModel = types
+  .model('RepoModel', {
     name: types.string,
     description: types.maybe(types.string),
     url: types.maybe(types.string),
@@ -37,24 +34,25 @@ const RepositoryModel = types.model(
     stargazers: types.optional(types.frozen, null),
     createdAt: types.maybe(types.string),
     updatedAt: types.maybe(types.string)
-  },
-  {}
-);
+  })
+  .views(self => ({}))
+  .actions(self => ({}));
 
-const GithubStore = types.model(
-  'GithubStore',
-  {
+const GithubStore = types
+  .model('GithubStore', {
     searchName: types.optional(types.string, ''),
     user: types.optional(types.maybe(UserModel), null), // Object with all the user data that comes from the Github API Fetch
     repos: types.optional(types.array(RepositoryModel), []), // Array of Repositories that comes from the Github API Fetch
-    fetchingData: types.optional(types.boolean, false),
+    fetchingData: types.optional(types.boolean, false)
+  })
+  .views(self => ({
     get AmountOfRepos() {
       return this.repos.length;
     }
-  },
-  {
-    fetchFromGithub: async(function*() {
-      this.fetchingData = true;
+  }))
+  .actions(self => {
+    const fetchFromGithub = process(function*() {
+      self.fetchingData = true;
       const query = gql`
         query {
           viewer {
@@ -91,7 +89,7 @@ const GithubStore = types.model(
       const { data: { viewer } } = yield client.query({
         query: query
       });
-      this.user = UserModel.create({
+      self.user = UserModel.create({
         name: viewer.name,
         bio: viewer.bio,
         avatar: viewer.avatarUrl,
@@ -100,10 +98,10 @@ const GithubStore = types.model(
       });
       let repoOrder = [...viewer.repositories.nodes];
       repoOrder = repoOrder.sort(compareRepo);
-      this.repos = repoOrder;
-      this.fetchingData = false;
-    })
-  }
-);
+      self.repos = repoOrder;
+      self.fetchingData = false;
+    });
+    return { fetchFromGithub };
+  });
 
 export default GithubStore;

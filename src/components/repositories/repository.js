@@ -25,6 +25,7 @@ const Title = styled.div`
   max-width: 80%;
   white-space: nowrap;
   overflow: hidden;
+  text-overflow: ellipsis;
   padding-bottom: 5px;
   margin-bottom: 10px;
 `;
@@ -39,27 +40,31 @@ const Link = styled.a`
   display: inline-block;
   text-decoration: none;
   outline: none;
-  color: #ffc600;
+  color: #6f86d6;
   transition: color 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
     outline: none;
-    color: #1e1e1e;
+    color: #48c6ef;
   }
 `;
 
 const Homepage = styled.a`
+  max-width: 100%;
   display: inline-block;
   text-decoration: none;
   outline: none;
-  color: #ffc600;
+  color: #6f86d6;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
   transition: color 0.3s ease-in-out;
 
   &:hover {
     text-decoration: none;
     outline: none;
-    color: #1e1e1e;
+    color: #48c6ef;
   }
 `;
 
@@ -73,11 +78,16 @@ const Description = styled.div`
 
 const Block = styled.div`
   width: 100%;
-  display: block;
+  display: flex;
+  flex-direction: row;
   margin-top: 10px;
+
+  strong {
+    margin-right: 5px;
+  }
 `;
 
-const Repository = ({ repository }) =>
+const Repository = ({ repository }) => (
   <Wrapper>
     <Card>
       <Title>
@@ -86,9 +96,7 @@ const Repository = ({ repository }) =>
           {repository.name}
         </Link>
       </Title>
-      <Description>
-        {repository.description}
-      </Description>
+      <Description>{repository.description}</Description>
       <Block>
         <strong>Homepage: </strong>
         <Homepage target={repository.homepageUrl}>
@@ -113,6 +121,7 @@ const Repository = ({ repository }) =>
         {new Date(repository.updatedAt).toLocaleString()}
       </Block>
     </Card>
-  </Wrapper>;
+  </Wrapper>
+);
 
 export default Repository;
