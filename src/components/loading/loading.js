@@ -82,6 +82,7 @@ const Wrapper = styled.div`
   position: absolute;
   top: 0;
   left: 0;
+  background-image: linear-gradient(to bottom left, #48c6ef 0%, #6f86d6 100%);
 `;
 
 const Loading = () =>
