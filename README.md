@@ -1,6 +1,8 @@
 ![React + MobX State Tree & GraphQL Logo](https://raw.githubusercontent.com/alexvcasillas/react-mobx-state-tree/master/React_MST_GraphQL_Logo.jpg)
 
-Note: This project is an enhancement of [3RMXi - React + React Router + MobX + Internationalization](https://github.com/alexvcasillas/react-mobx-router). If you want to use plain MobX or MobX State Tree with just regular browser fetch you should check that project. This project is intended to use the latest features of the Javascript ecosystem but in stable versions.
+<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/kHpsrcebN6AQb2ERfWQbVbeX/alexvcasillas/react-mobx-state-tree'>
+  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/kHpsrcebN6AQb2ERfWQbVbeX/alexvcasillas/react-mobx-state-tree.svg' />
+</a>
 
 ### About React + MobX State Tree & GraphQL
 
