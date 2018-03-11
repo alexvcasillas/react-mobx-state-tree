@@ -1,9 +1,5 @@
 ![React + MobX State Tree & GraphQL Logo](https://raw.githubusercontent.com/alexvcasillas/react-mobx-state-tree/master/React_MST_GraphQL_Logo.jpg)
 
-<a target='_blank' rel='nofollow' href='https://app.codesponsor.io/link/kHpsrcebN6AQb2ERfWQbVbeX/alexvcasillas/react-mobx-state-tree'>
-  <img alt='Sponsor' width='888' height='68' src='https://app.codesponsor.io/embed/kHpsrcebN6AQb2ERfWQbVbeX/alexvcasillas/react-mobx-state-tree.svg' />
-</a>
-
 ### About React + MobX State Tree & GraphQL
 
 This project was initially built as a personal project to create my own website ([https://alexvcasillas.com](https://alexvcasillas.com)) to test the latest features of the awesome [MobX State Tree](https://github.com/mobxjs/mobx-state-tree) and [GraphQL](https://github.com/facebook/graphql). The React part of this project is based on the latest [Create React App](https://github.com/facebookincubator/create-react-app) stable release (check their docs for further knowledge).
