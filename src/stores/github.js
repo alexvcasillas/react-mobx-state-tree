@@ -1,5 +1,6 @@
 import { types, flow } from 'mobx-state-tree';
-import { client, gql } from '../services/graphql.service';
+import { client } from '../services/graphql.service';
+import { viewerQuery } from '../queries/viewer.query';
 
 function compareRepo(a, b) {
   const aUpdated = new Date(a.updatedAt);
@@ -53,41 +54,8 @@ const GithubStore = types
   .actions(self => {
     const fetchFromGithub = flow(function* () {
       self.fetchingData = true;
-      const query = gql`
-        query {
-          viewer {
-            avatarUrl
-            bio
-            login
-            name
-            followers {
-              totalCount
-            }
-            following {
-              totalCount
-            }
-            websiteUrl
-            url
-            repositories(first: 100) {
-              totalCount
-              nodes {
-                name
-                description
-                url
-                homepageUrl
-                isFork
-                createdAt
-                updatedAt
-                stargazers {
-                  totalCount
-                }
-              }
-            }
-          }
-        }
-      `;
       const { data: { viewer } } = yield client.query({
-        query: query,
+        query: viewerQuery,
         fetchPolicy: 'network-only'
       });
       self.user = UserModel.create({
