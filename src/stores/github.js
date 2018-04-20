@@ -1,5 +1,5 @@
 import { types, flow } from 'mobx-state-tree';
-import client, { gql } from '../utils/graphql';
+import { client, gql } from '../services/graphql.service';
 
 function compareRepo(a, b) {
   const aUpdated = new Date(a.updatedAt);
@@ -51,7 +51,7 @@ const GithubStore = types
     }
   }))
   .actions(self => {
-    const fetchFromGithub = flow(function*() {
+    const fetchFromGithub = flow(function* () {
       self.fetchingData = true;
       const query = gql`
         query {
